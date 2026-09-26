@@ -11,8 +11,8 @@ app.use(express.json());
 
 app.get('/api/health', (req, res) => res.json({ ok: true }));
 app.use('/api/auth', require('./routes/auth'));
-// app.use('/api', requireAuth, require('./routes/master'));      // ← uncomment in Step 6
-// app.use('/api', requireAuth, require('./routes/operations'));  // ← uncomment in Step 6
+app.use('/api', requireAuth, require('./routes/master'));
+app.use('/api', requireAuth, require('./routes/operations'));
 app.use('/api', (req, res) => res.status(404).json({ error: 'Not found' }));
 
 // In production, serve the built React app from the same server.

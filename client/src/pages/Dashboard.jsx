@@ -65,9 +65,6 @@ export default function Dashboard() {
         <OpCard title="Receipt" type="receipt" verb="receive" c={d?.receipt_card} q={q} />
         <OpCard title="Delivery" type="delivery" verb="deliver" c={d?.delivery_card} q={q} />
       </div>
-      <p className="small muted legend">
-        <b>Late:</b> scheduled date is before today · <b>Operations:</b> scheduled after today · <b>Waiting:</b> waiting for stock
-      </p>
 
       <div className="kpis">
         <Kpi label="Products in stock" value={d?.in_stock} hint={d && `of ${d.total_products} products`} to="/products" />
